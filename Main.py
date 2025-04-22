@@ -78,7 +78,7 @@ if uploaded_file:
             st.progress(progress)
 
             # --- Money Section ---
-        st.header("🏅 Skills Progress")
+        st.header("🏅 Money Progress")
 
         money_goals = {
             "Argent": 3200
