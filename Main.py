@@ -4,14 +4,14 @@ import pandas as pd
 st.set_page_config(page_title="Goal Tracker", layout="centered")
 
 st.title("🎯 Life Progress Tracker")
-st.write("Track how close you are to your goals based on your daily log CSV.")
+st.write("Track how close you are to your goals based on your daily log Excel file.")
 
 # File uploader
-uploaded_file = st.file_uploader("Upload your daily log CSV", type=["csv"])
+uploaded_file = st.file_uploader("Upload your daily log Excel file (.xlsx)", type=["xlsx"])
 
 if uploaded_file:
     try:
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_excel(uploaded_file)
 
         # --- Sports Section ---
         st.header("🏅 Sports Progress")
@@ -100,4 +100,4 @@ if uploaded_file:
     except Exception as e:
         st.error(f"Error processing file: {e}")
 else:
-    st.info("Please upload your CSV file to get started.")
+    st.info("Please upload your excel file to get started.")
